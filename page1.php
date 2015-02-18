@@ -35,15 +35,21 @@
         // we make a sine wave with some math.
         polyline.addLatLng(
             L.latLng(
-                Math.cos(pointsAdded / 20) * 30,
+                Math.cos(pointsAdded / 30) * 30,
                 pointsAdded));
+            console.log('Points Added L ' + pointsAdded);
+            //pointsAdded = 1;
 
         // Pan the map along with where the line is being added.
         map.setView([0, pointsAdded], 3);
 
         // Continue to draw and pan the map by calling `add()`
         // until `pointsAdded` reaches 360.
-        if (++pointsAdded < 360) window.setTimeout(add, 100);
+        if (++pointsAdded < 40){
+            window.setTimeout(add, 100);
+        }else{
+            alert('That is my home country!');
+        }
     }
   </script>
   </body>
